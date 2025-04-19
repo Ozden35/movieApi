@@ -15,7 +15,7 @@ public UpdateMovieCommandHandler(MovieContext context)
         {
             _context = context;
         }
-        public async void Handler(UpdateMovieCommand command)
+        public async Task Handle(UpdateMovieCommand command)
         {
             var value = await _context.Movies.FindAsync(command.MovieId);
             value.Rating = command.Rating;
