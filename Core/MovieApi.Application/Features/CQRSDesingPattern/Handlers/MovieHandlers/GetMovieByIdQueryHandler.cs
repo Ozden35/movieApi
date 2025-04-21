@@ -22,6 +22,7 @@ public GetMovieByIdQueryHandler(MovieContext context)
             var value = await _context.Movies.FindAsync(query.MovieId);
             return new GetMovieByIdQueryResult
             {
+                MovieId = value.MovieId,
                 CoverImageUrl = value.CoverImageUrl,
                 CreatedYear = value.CreatedYear,
                 Description = value.Description,
